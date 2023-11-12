@@ -1,0 +1,20 @@
+<canvas class="background" [ngClass]="{'dark': isDark}"></canvas>
+<div class="content" [ngClass]="{'dark': isDark}">
+    <header>
+        <div id="toggle" [ngClass]="{'active': isDark}" (click)="toggleDark()">
+            <i class="indicator"></i>
+        </div>
+        <nav [ngClass]="{'dark': isDark}">
+            <!-- <div id="button" [ngClass]="{'active': isShow}" (click)="toggleShow()">
+                <i class="arrow"></i>
+            </div> -->
+            <app-nav [isDark]="isDark"></app-nav>
+        </nav>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+    
+    </footer>
+</div>

@@ -1,0 +1,45 @@
+$gray-base: rgb(128,128,128);
+
+$color-dark: darken($gray-base, 35.5%);
+$color-darker: darken($color-dark, 5%);
+$color-darkerest: darken($color-darker, 2.5%);
+
+$color-light: lighten($gray-base, 35.5%);
+$color-lighter: lighten($color-light, 5%);
+$color-lighterest: lighten($color-lighter, 2.5%);
+
+$color-red: rgb(158, 36, 36);
+$color-red-light: lighten($color-red, 30%);
+
+$transition: .3s;
+
+$toggler-size: 20px;
+
+$nav-width: 15px 30px;
+
+.no-select {
+    user-select: none;
+}
+
+section
+{
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &.dark {
+        background-color: $color-dark;
+        color: $color-light;
+        &.mod {
+            background-color: darken($color-dark, 1%);
+        }
+    }
+    .container {
+        height: fit-content;
+        width: 70%;
+        gap: 20px;
+    }
+}

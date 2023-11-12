@@ -1,0 +1,88 @@
+@import "../styles.scss";
+
+.background {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background-color: $color-light;
+    transition: $transition;
+    &.dark {
+        background-color: $color-dark;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 10vw;
+    padding: 3vh 0;
+    background-color: $color-lighterest;
+    transition: $transition;
+    &.dark {
+        background-color: $color-darkerest;
+        #button {
+            background-color: $color-darkerest;
+        }
+    }
+    #button {
+        position: absolute;
+        top: 50%;
+        right: -10%;
+        width: 30px;
+        height: 30px;
+        transform: rotateZ(45deg);
+        transition: $transition;
+        background-color: $color-lighterest;
+    }
+}
+
+main {
+    width: 90vw;
+    height: auto;
+    margin-left: 10vw;
+}
+
+.content {
+    color: $color-dark;
+    transition: $transition;
+    &.dark {
+        color: $color-light;
+        #toggle {
+            background-color: $color-darker;
+            .indicator {
+                background: linear-gradient(to bottom, $color-lighter, $color-lighterest);
+            }
+        }
+    }
+    #toggle {
+        top: 1vh;
+        right: 1vw;
+        position: absolute;
+        display: block;
+        width: calc($toggler-size * 2);
+        height: $toggler-size;
+        border-radius: $toggler-size;
+        transition: $transition;
+        cursor: pointer;
+        background-color: $color-lighter;
+        &.active {
+            .indicator {
+                left: $toggler-size;
+            }
+        }
+        .indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $toggler-size;
+            height: $toggler-size;
+            border-radius: 50%;
+            transform: scale(0.9);
+            transition: $transition;
+            background: linear-gradient(to bottom, $color-darker, $color-darkerest);
+        }
+    }
+}

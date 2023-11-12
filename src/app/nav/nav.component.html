@@ -1,0 +1,11 @@
+<ul *ngIf="!isHide" [ngClass]="'depth-' + [depth]">
+    <div *ngFor="let item of currentNav"  class="item-container">
+        <li (click)="item.toggleAction($event, item.url); item.toggleActive();"  [ngClass]="{'dark': isDark}" class="no-select">
+            <span class="icon"></span>
+            <span class="text">{{item.title}}</span>
+        </li>
+        <ng-container *ngIf="item.elements">
+            <app-nav [currentNav]="item.elements" [depth]="depth + 1" [isHide]="!item.isHovered" [isDark]="isDark"></app-nav>
+        </ng-container>
+    </div>
+</ul>
